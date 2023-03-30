@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//a[text()=\"Apple Cinema 30\"]"
+}
