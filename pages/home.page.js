@@ -10,11 +10,11 @@ class HomePage extends BasePage {
 
    /**
     * Escribe el artículo en el campo de búsqueda y presiona Enter
-    * @param {String} articulo que se buscará
-    */
+     @param {String} articulo que se buscará
+   
    async buscar(articulo) {
        await super.vaciarCampoYEnviarTexto(await this.barraDeBusqueda, articulo);
-       await this.basrraDeBusqueda.keys('Enter');
+       await this.barraDeBusqueda.keys('Enter');
    }
 
    /**
