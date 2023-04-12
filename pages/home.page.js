@@ -1,4 +1,4 @@
-import BasePage from '../pages/base.page';
+import BasePage from './base.page';
 
 class HomePage extends BasePage {
 
@@ -14,7 +14,7 @@ class HomePage extends BasePage {
     */
    async buscar(articulo) {
        await super.vaciarCampoYEnviarTexto(await this.barraDeBusqueda, articulo);
-       await this.barraDeBusqueda.keys('Enter');
+       await this.basrraDeBusqueda.keys('Enter');
    }
 
    /**

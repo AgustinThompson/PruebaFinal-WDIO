@@ -1,4 +1,4 @@
-import BasePage from '../pages/base.page';
+import BasePage from './base.page';
 
 class SearchPage extends BasePage {
 
