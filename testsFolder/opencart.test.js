@@ -1,4 +1,4 @@
-/* 
+
 describe('Carrito', () => { 
   
   it('Debería buscar apple cinema, ingresar al artículo y seleccionar el segundo color', async () => {
@@ -13,6 +13,6 @@ describe('Carrito', () => {
     
   });
 });
- */
+
 
 

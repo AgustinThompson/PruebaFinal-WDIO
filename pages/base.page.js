@@ -1,5 +1,8 @@
+
 const PAGE_TIMEOUT = 10000
- export default class BasePage {
+
+export default class BasePage {
+
 
    /**
     * Abrir página
@@ -8,6 +11,7 @@ const PAGE_TIMEOUT = 10000
    async abrir(ruta) {
        await browser.url(`${ruta}`);
    }
+
 
    /**
     * Esperar a que un elemento sea clickeable y hacer click
@@ -31,4 +35,5 @@ const PAGE_TIMEOUT = 10000
        await elemento.keys(texto);
    }
 
- }
+
+}

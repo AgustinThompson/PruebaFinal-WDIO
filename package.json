@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "directories": { 
-    "test": "test" 
+  "directories": {
+    "test": "test"
   },
   "dependencies": {
     "@wdio/cli": "^7.27.0"
