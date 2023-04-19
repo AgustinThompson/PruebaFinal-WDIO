@@ -1,12 +1,14 @@
 import BasePage from "./base.page";
-import { expect } from "chai";
+
 
 class AppleCPage extends BasePage {
 
+    
+
     //WebElements
 
-    get resultado(){ return $() } // busca el elemento con el tag h4 y lo asigna a la variable resultado - Esta variable  se usa en el test
-    
+    get resultado(){ 
+        return $('//div[@class="caption"]//a[1]') }    
 
     //-------------------------------------------------------------------------------------------------------//
 
@@ -25,6 +27,7 @@ class AppleCPage extends BasePage {
     //Seleccionar el color del producto
 
     async seleccionarColor(color){  // método para seleccionar el color del producto
+        
         const dropDownColor = await $('select'); //busca el elemento con el tag select y lo asigna a la variable dropDownColor
         await dropDownColor.selectByIndex(2); //selecciona el color del producto
         console.log(await dropDownColor.getValue()); //imprime el valor del color seleccionado
