@@ -1,4 +1,5 @@
 
+
 const PAGE_TIMEOUT = 10000 // variable que define el tiempo de espera para que un elemento sea clickeable
 
 export default class BasePage {
@@ -9,7 +10,7 @@ export default class BasePage {
     * @param {String} ruta a la cual acceder // 
     */
    async abrir(ruta) { // método para abrir una página  
-       await browser.url(`${ruta}`);  // abre la página con la ruta que se le envía que en este caso está definida en el test
+    await browser.url(`${ruta}`); 
    }
 
 

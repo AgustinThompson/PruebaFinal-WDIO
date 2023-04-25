@@ -1,5 +1,9 @@
 import BasePage from './base.page'; // importa la clase BasePage
 
+
+
+
+
 class HomePage extends BasePage { // la clase HomePage hereda de la clase BasePage
 
     //WebElements
@@ -12,14 +16,42 @@ class HomePage extends BasePage { // la clase HomePage hereda de la clase BasePa
      * @param {String} articulo que se buscará
      */
     async buscar(articulo) {
-        await super.vaciarCampoYEnviarTexto(await this.barraDeBusqueda, articulo);  // super llama al método de la clase padre (BasePage) y le envía los parámetros
-    } 
+        addStep(`Buscar articulo: ${articulo}`)
+        await super.vaciarCampoYEnviarTexto(await this.barraDeBusqueda, articulo);
+        await this.barraDeBusqueda.keys('Enter');
+    }
     /**
      * Obtener texto de la barra de búsqueda
      */
-    async obtenerTextoBusqueda() { // método para obtener el texto de la barra de búsqueda
-        return await this.barraDeBusqueda.getValue(); //getValue() obtiene el valor del elemento
+    async obtenerTextoBusqueda() {
+        addStep('Obtener texto de la barra de busqueda')
+        return await this.barraDeBusqueda.getValue();
     }
+    /**
+    * Obtener texto de la barra de bÃºsqueda
+    */
+   async obtenerTextoBusqueda() {
+    addStep('Obtener texto de la barra de busqueda')
+    return await this.barraDeBusqueda.getValue();
+}
+/**
+    * Escribe el artÃ­culo en el campo de bÃºsqueda y presiona Enter
+    * @param {String} articulo que se buscarÃ¡
+    */
+async buscar(articulo) {
+    addStep(`Buscar articulo: ${articulo}`)
+    await super.vaciarCampoYEnviarTexto(await this.barraDeBusqueda, articulo);
+    await this.barraDeBusqueda.keys('Enter');
+}
+
+/**
+ * Obtener texto de la barra de busqueda
+ */
+async obtenerTextoBusqueda() {
+    addStep('Obtener texto de la barra de busqueda')
+    return await this.barraDeBusqueda.getValue();
+}
+
  
  
  }

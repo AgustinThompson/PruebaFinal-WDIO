@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "directories": {
-    "test": "test"
+    "test": "test",
+    "wdio.conf.js": "wdio.conf.js"
   },
   "dependencies": {
     "@wdio/cli": "^7.27.0"
