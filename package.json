@@ -1,5 +1,5 @@
 {
-  "name": "curso-webdriver-abstracta",
+  "name": "prueba-final-webdriver-abstracta",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -25,9 +25,12 @@
     "wdio-image-comparison-service": "^5.0.3",
     "webdriverio": "^7.27.0"
   },
-  "scripts": {
-    "test": "wdio ./wdio.conf.js"
+  
+    "scripts": {
+      "test": "wdio ./wdio.conf.js",
+      "testing": "npm AMBIENTE=testing run test",
+      "prod": "npm AMBIENTE=prod run test"
   },
-  "author": "",
+  "author": "Agustin Thompson",
   "license": "ISC"
 }

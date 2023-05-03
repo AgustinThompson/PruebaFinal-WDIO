@@ -1,6 +1,16 @@
-var path = require('path');
+import ambientes from './datos/ambientes.js';
+//obtener el ambiente seleccionado
+let AMBIENTE = process.env.AMBIENTE
 
-exports.config = {
+if (!AMBIENTE || !['testing', 'prod'].includes(AMBIENTE)) {
+   //si no se selecciona ningún ambiente se utiliza el ambiente de testing por defecto
+   console.log('Ejecutando testing por default')
+   AMBIENTE = 'testing'
+}
+
+import { join } from 'path';
+
+export const config = {
     
     
     //
@@ -104,7 +114,8 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://opencart.abstracta.us/',
+   //baseUrl: ambientes[AMBIENTE],
+   baseUrl: ambientes[AMBIENTE],
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -125,9 +136,9 @@ exports.config = {
         [
           'image-comparison',
           {
-            baselineFolder: path.join(process.cwd(), './visual-regression/baseline/'),
+            baselineFolder: join(process.cwd(), './visual-regression/baseline/'),
             formatImageName: '{tag}-{logName}-{width}x{height}',
-            screenshotPath: path.join(process.cwd(), './visual-regression/'),
+            screenshotPath: join(process.cwd(), './visual-regression/'),
             savePerInstance: true,
             autoSaveBaseline: true,
             blockOutStatusBar: true,

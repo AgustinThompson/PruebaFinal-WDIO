@@ -4,7 +4,7 @@ import BasePage from './base.page';
 class SearchPage extends BasePage { // la clase SearchPage hereda los métodos de la clase BasePage
 
    //Elementos Web
-get resultado(){ return $("//div[@class='caption']//a[1]") } // busca el elemento con el tag  y lo asigna a la variable resultado - Esta variable  se usa en el test
+get resultado(){ return $("//h2[@class='product-name']//a[1]") } // busca el elemento con el tag  y lo asigna a la variable resultado - Esta variable  se usa en el test
 
    //-------------------------------------------------------------------------------------------------------//
  
