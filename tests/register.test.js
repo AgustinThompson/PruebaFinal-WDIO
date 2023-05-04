@@ -4,8 +4,10 @@ import urls from "../data/urls.json";
 import { expect } from "chai";
 
 describe("Register Page", () => {
+  let registeredUser;
+
   before(async () => {
-    await RegisterPage.abrir(urls.registerUrl);
+    await RegisterPage.open(urls.registerUrl);
   });
 
   after(async () => {
@@ -43,8 +45,15 @@ describe("Register Page", () => {
     const successMessageLocator = $(`li[class="success-msg"] ul li`);
     await successMessageLocator.waitForDisplayed();
     const successMessageText = await successMessageLocator.getText();
-    expect(successMessageText).to.include("Thank you for registering");
+    expect(successMessageText).to.include("Thank you for registering with Madison Island.");
 
-    // Additional assertions can be added as needed
+    // Assign the registered user
+    registeredUser = user;
   }).timeout(15000); // Increase the timeout if necessary
+
+  afterEach(() => {
+    if (registeredUser) {
+      console.log(`User ${registeredUser.firstName} ${registeredUser.lastName} registered successfully!`);
+    }
+  });
 });
