@@ -11,9 +11,9 @@ describe('Article Search', () => {
   });
 
   afterEach(async () => {
-    // Realizar acciones de limpieza si es necesario, por ejemplo, cerrar sesión, borrar cookies, etc.
-  });
 
+  });
+  
   articles.forEach(article => {
     it(`Should search and find the article: ${article}`, async () => {
       await performSearch(article);

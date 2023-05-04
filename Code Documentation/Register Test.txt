@@ -1,0 +1,38 @@
+Code Documentation:
+
+
+The code consists of three page files, one JSON data file, and one test file.
+
+1. register.page.js:
+
+   - This page file represents the registration page.
+   - It contains web elements related to the registration form, such as first name, last name, email, password, etc.
+   - The `registerForm` method is used to fill out the registration form.
+     - It takes input parameters like first name, last name, email, password, and confirmation password.
+     - It fills in the respective fields of the form.
+   - The `RegisterPage` page extends the `BasePage` class, which provides common methods for interacting with page elements.
+ 
+2. registrationConfirmation.page.js:
+
+   - This page file represents the registration confirmation page.
+   - It contains a web element for the success message after successful registration.
+   - The `waitForSuccessMessage` method is used to wait for the success message to be displayed on the page.
+   - The `getSuccessMessageText` method is used to get the text of the success message.
+
+3. user_data.json:
+
+   - This JSON data file contains information about registered users.
+   - In this case, it contains an array of user objects, each with details like first name, last name, email, password, and confirmation password.
+
+4. register.test.js:
+
+   - This file contains a test case that tests the registration functionality.
+   - The `before` method is used to open the registration page before the test case is executed.
+   - The `after` method is used to perform cleanup actions after the test case is executed.
+   - The `it` method represents the actual test case that verifies the registration of a new user.
+     - It uses the data from the `user_data.json` file to fill out the registration form.
+     - It checks if the email is already registered and throws an error message if it is.
+     - If there is no error message, it verifies the current URL and the success message on the registration confirmation page.
+   - The `afterEach` method is used to log a message to the console indicating that the user was registered successfully.
+
+In summary, the `register.test.js` test file uses the `RegisterPage` and `RegistrationConfirmationPage` pages to test the registration functionality. The data from the `user_data.json` file is used to fill out the registration form. The relationship between the pages, JSON file, and test file is established through appropriate imports and exports.

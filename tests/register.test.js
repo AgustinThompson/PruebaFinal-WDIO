@@ -11,8 +11,7 @@ describe("Register Page", () => {
   });
 
   after(async () => {
-    // Perform cleanup after the test
-    // For example, you can navigate to a different page or perform additional actions
+    
   });
 
   const user = users[0];
@@ -49,7 +48,7 @@ describe("Register Page", () => {
 
     // Assign the registered user
     registeredUser = user;
-  }).timeout(15000); // Increase the timeout if necessary
+  }).timeout(15000); 
 
   afterEach(() => {
     if (registeredUser) {
