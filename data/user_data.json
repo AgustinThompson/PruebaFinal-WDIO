@@ -1,12 +1,11 @@
 {
-    "users": [
-      {
-        "firstName": "Jannse",
-        "lastName": "Doee",
-        "email": "janeahsfw@example.com",
-        "password": "password456",
-        "confirmPassword": "password456"
-      }
-    ]
-  }
-  
+  "users": [
+    {
+      "firstName": "Agustín",
+      "lastName": "Thompson",
+      "email": "chacha@mimail.com",
+      "password": "Password1234",
+      "confirmPassword": "Password1234"
+    }
+  ]
+}

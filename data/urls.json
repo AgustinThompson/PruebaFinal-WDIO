@@ -1,5 +1,5 @@
 {
-    "baseUrl": "http://magento-demo.lexiconn.com",
+    "homeUrl": "http://magento-demo.lexiconn.com/",
     "registerUrl": "http://magento-demo.lexiconn.com/customer/account/create/",
     "loginUrl": "http://magento-demo.lexiconn.com/customer/account/login/",
     "searchUrl": "http://magento-demo.lexiconn.com/catalogsearch/result/",
