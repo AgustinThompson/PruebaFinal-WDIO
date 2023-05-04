@@ -1,0 +1,12 @@
+{
+    "users": [
+      {
+        "firstName": "Jannse",
+        "lastName": "Doee",
+        "email": "janeahfw@example.com",
+        "password": "password456",
+        "confirmPassword": "password456"
+      }
+    ]
+  }
+  

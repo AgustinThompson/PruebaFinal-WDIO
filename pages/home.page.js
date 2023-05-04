@@ -1,28 +1,29 @@
-import BasePage from './base.page'; // importa la clase BasePage
+import BasePage from './base.page';
 
-class HomePage extends BasePage { // la clase HomePage hereda de la clase BasePage
+class HomePage extends BasePage {
 
-    //WebElements
-    get barraDeBusqueda(){ return $('//input[@id="search"]') } // busca el elemento con el atributo name="search" y lo asigna a la variable barraDeBusqueda
- 
-    //-------------------------------------------------------------------------------------------------------//
- 
+    // Web Elements
+    get searchInput() { return $('//input[@id="search"]') }
+
     /**
-     * Escribe el artículo en el campo de búsqueda y presiona Enter
-     * @param {String} articulo que se buscará
+     * Search for an article by entering the text in the search field and pressing Enter.
+     * @param {string} article - The article to search for.
+     * @returns {Promise} - Promise representing the search action.
      */
-    async buscar(articulo) {
-        addStep(`Buscar articulo: ${articulo}`)
-        await super.vaciarCampoYEnviarTexto(await this.barraDeBusqueda, articulo);
-        await this.barraDeBusqueda.keys('Enter');
+    async searchArticle(article) {
+        addStep(`Search for article: ${article}`);
+        await this.clearValue(this.searchInput);
+        await this.sendKeys(this.searchInput, article);
+        await this.searchInput.keys('Enter');
     }
+
     /**
-     * Obtener texto de la barra de búsqueda
+     * Get the text of the search input field.
+     * @returns {Promise<string>} - Promise representing the text of the search input field.
      */
-    async obtenerTextoBusqueda() { // obtiene el texto de la barra de búsqueda
-        addStep('Obtener texto de la barra de busqueda')
-        return await this.barraDeBusqueda.getValue();
+    async getSearchInputText() {
+        addStep('Get text from the search input field');
+        return await this.searchInput.getValue();
     }
-} 
- 
- export default new HomePage(); // exporta la instancia de la clase HomePage a los tests que la requieran
+}
+export default new HomePage();

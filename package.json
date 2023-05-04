@@ -8,7 +8,8 @@
     "wdio.conf.js": "wdio.conf.js"
   },
   "dependencies": {
-    "@wdio/cli": "^7.27.0"
+    "@wdio/cli": "^7.27.0",
+    "faker": "^6.6.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.7",
@@ -25,11 +26,10 @@
     "wdio-image-comparison-service": "^5.0.3",
     "webdriverio": "^7.27.0"
   },
-  
-    "scripts": {
-      "test": "wdio ./wdio.conf.js",
-      "testing": "npm AMBIENTE=testing run test",
-      "prod": "npm AMBIENTE=prod run test"
+  "scripts": {
+    "test": "wdio ./wdio.conf.js",
+    "testing": "npm AMBIENTE=testing run test",
+    "prod": "npm AMBIENTE=prod run test"
   },
   "author": "Agustin Thompson",
   "license": "ISC"

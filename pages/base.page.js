@@ -1,40 +1,48 @@
-
-
-const PAGE_TIMEOUT = 10000 // variable que define el tiempo de espera para que un elemento sea clickeable
+const PAGE_TIMEOUT = 10000;
 
 export default class BasePage {
-
-
    /**
-    * Abrir página
-    * @param {String} ruta a la cual acceder // 
+    * Open a page.
+    * @param {string} path - The path to open.
     */
-   async abrir(ruta) { // método para abrir una página  
-    await browser.url(`${ruta}`); 
+   async abrir(path) {
+    await browser.url(`${path}`);
    }
 
-
    /**
-    * Esperar a que un elemento sea clickeable y hacer click
-    * @param {Object} elemento a clickear
+    * Wait for an element to be clickable and click it.
+    * @param {WebdriverIO.Element} element - The element to click.
     */
-   async clickearElemento(elemento) { // método para hacer click en un elemento
-       await elemento.waitForClickable({ timeout: PAGE_TIMEOUT }); // espera a que el elemento sea clickeable
-       await elemento.click(); // hace click en el elemento
+   async clickearElemento(element) {
+    await element.waitForClickable({ timeout: PAGE_TIMEOUT });
+    await element.click();
    }
 
-
    /**
-    * Método para enviar texto a un elemento
-    * @param {Object} elemento que recibirá el texto
-    * @param {String} texto a envíar  
+    * Clear the value of a text input field.
+    * @param {WebdriverIO.Element} element - The text input field element.
     */
-   async vaciarCampoYEnviarTexto(elemento, texto){ // método para vaciar un campo  de texto y enviar texto
-       await elemento.waitForClickable({ timeout: PAGE_TIMEOUT }); // espera a que el elemento sea clickeable - 
-       await elemento.clearValue(); // borra el valor del campo de texto
-       await elemento.click(); // hace click en el campo de texto
-       await elemento.keys(texto); // envía el texto al campo de texto
+   async clearValue(element) {
+    await element.waitForClickable({ timeout: PAGE_TIMEOUT });
+    await element.clearValue();
    }
 
+   /**
+    * Send text to an input field.
+    * @param {WebdriverIO.Element} element - The input field element.
+    * @param {string} text - The text to send.
+    */
+   async sendKeys(element, text) {
+    await element.waitForClickable({ timeout: PAGE_TIMEOUT });
+    await element.click();
+    await element.keys(text);
+   }
 
+   /**
+    * Wait for an element to be visible.
+    * @param {WebdriverIO.Element} element - The element to wait for.
+    */
+   async waitForVisible(element) {
+    await element.waitForDisplayed({ timeout: PAGE_TIMEOUT });
+   }
 }
