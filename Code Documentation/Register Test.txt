@@ -1,5 +1,6 @@
 Code Documentation:
 
+
 The code consists of three page files, one JSON data file, and one test file.
 
 1. register.page.js:
@@ -10,7 +11,7 @@ The code consists of three page files, one JSON data file, and one test file.
      - It takes input parameters like first name, last name, email, password, and confirmation password.
      - It fills in the respective fields of the form.
    - The `RegisterPage` page extends the `BasePage` class, which provides common methods for interacting with page elements.
-
+ 
 2. registrationConfirmation.page.js:
 
    - This page file represents the registration confirmation page.

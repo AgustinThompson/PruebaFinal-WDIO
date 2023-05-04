@@ -13,7 +13,7 @@ describe('Article Search', () => {
   afterEach(async () => {
 
   });
-
+  
   articles.forEach(article => {
     it(`Should search and find the article: ${article}`, async () => {
       await performSearch(article);

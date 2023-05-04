@@ -12,7 +12,6 @@ describe("Register Page", () => {
 
   after(async () => {
     
-    
   });
 
   const user = users[0];
