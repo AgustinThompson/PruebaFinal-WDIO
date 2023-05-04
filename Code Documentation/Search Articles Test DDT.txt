@@ -1,0 +1,35 @@
+Code Documentation:
+
+The  code consists of four page files, one JSON data file, and one test file.
+
+1. `home.page.js`:
+   - This page file represents the home page. It contains web elements related to the search functionality, such as the search input field.
+   - The `searchArticle` method is used to perform a search by entering the article name in the search input field and pressing Enter. It clears the input field, sends the article name as input, and simulates the Enter key press. It also waits for the first search result to be visible.
+   - The `getSearchInputText` method is used to retrieve the text entered in the search input field.
+
+2. `search.page.js`:
+   - This page file represents the search results page. It contains a web element for the first search result.
+   - The `getFirstSearchResultText` method is used to retrieve the text of the first search result.
+
+3. `base.page.js`:
+   - This page file represents the base page from which other page files inherit. It contains common methods for interacting with page elements.
+   - The `open` method is used to open a page by navigating to the specified URL.
+   - The `clickElement` method waits for an element to be clickable and then clicks it.
+   - The `clearValue` method waits for an element to be clickable and clears its value.
+   - The `sendKeys` method waits for an element to be clickable, clicks it, and sends the specified text.
+   - The `waitForVisible` method waits for an element to be visible.
+
+4. `busqueda.test.ddt.js`:
+   - This file contains a test case that performs a search for each article specified in the `articles` array from the `articles.json` file.
+   - The `before` method is used to open the home page before executing the test case.
+   - The `afterEach` method is called after each test case to perform cleanup actions if necessary.
+   - Inside the test case, the `performSearch` function is called to search for each article. It uses the `searchArticle` method from the `HomePage` page.
+   - The `validateSearchResults` function is called to validate the search results for each article. It uses the `getSearchInputText` method from the `HomePage` page and the `getFirstSearchResultText` method from the `SearchPage` page.
+
+5. `articles.json`:
+   - This JSON data file contains an array of articles to be searched for.
+
+6. `urls.json`:
+   - This JSON data file contains URLs for various pages like the home page, registration page, login page, search results page, and success page.
+
+In summary, the `busqueda.test.ddt.js` test file uses the `HomePage` and `SearchPage` pages to perform a search for each article specified in the `articles.json` file. The URLs for various pages are stored in the `urls.json` file. The relationship between the pages, JSON files, and the test file is established through appropriate imports and exports.
