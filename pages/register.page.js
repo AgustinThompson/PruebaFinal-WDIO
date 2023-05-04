@@ -1,24 +1,39 @@
+// register.page.js
 import BasePage from "./base.page";
 
 class RegisterPage extends BasePage {
-  // WebElements
-  get firstName() { return $(`#firstname`); }
-  get lastName() { return $(`#lastname`); }
-  get email() { return $(`#email_address`); }
-  get password() { return $(`#password`); }
-  get confirmPassword() { return $(`#confirmation`); }
-  get signUpCheckbox() { return $(`#is_subscribed`); }
-  get backBtn() { return $(`a[class="back-link"]`); }
-  get registerBtn() { return $(`button[title="Register"] span span`); }
+  get firstName() {
+    return $(`#firstname`);
+  }
 
-  /**
-   * Fill the registration form
-   * @param {string} firstName - User's first name
-   * @param {string} lastName - User's last name
-   * @param {string} email - User's email
-   * @param {string} password - User's password
-   * @param {string} confirmPassword - User's password confirmation
-   */
+  get lastName() {
+    return $(`#lastname`);
+  }
+
+  get email() {
+    return $(`#email_address`);
+  }
+
+  get password() {
+    return $(`#password`);
+  }
+
+  get confirmPassword() {
+    return $(`#confirmation`);
+  }
+
+  get signUpCheckbox() {
+    return $(`#is_subscribed`);
+  }
+
+  get backBtn() {
+    return $(`a[class="back-link"]`);
+  }
+
+  get registerBtn() {
+    return $(`button[title="Register"] span span`);
+  }
+
   async registerForm(firstName, lastName, email, password, confirmPassword) {
     await this.firstName.setValue(firstName);
     await this.lastName.setValue(lastName);
