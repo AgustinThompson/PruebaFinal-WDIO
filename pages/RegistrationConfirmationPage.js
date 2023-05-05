@@ -1,4 +1,3 @@
-// registrationConfirmation.page.js
 import BasePage from "./base.page";
 
 class registrationConfirmationPage extends BasePage {

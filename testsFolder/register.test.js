@@ -2,6 +2,7 @@ import RegisterPage from "../pages/register.page";
 import { users } from "../data/user_data.json";
 import urls from "../data/urls.json";
 import { expect } from "chai";
+import allure from '@wdio/allure-reporter';
 
 describe("Register Page", () => {
   let registeredUser;
@@ -11,7 +12,6 @@ describe("Register Page", () => {
   });
 
   after(async () => {
-    
   });
 
   const user = users[0];
@@ -27,11 +27,11 @@ describe("Register Page", () => {
     );
 
     // Check if the email is already registered
-    const emailAlreadyRegisteredLocator = $('//span[contains(text(),"There is already an account with this email addres")]');
+    const emailAlreadyRegisteredLocator = $('//span[contains(text(),"There is already an account with this email address")]');
     const isEmailAlreadyRegistered = await emailAlreadyRegisteredLocator.isDisplayed();
 
     if (isEmailAlreadyRegistered) {
-      // Email is already registered, fail the test
+      //If Email is already registered, fail the test
       const errorMessage = await emailAlreadyRegisteredLocator.getText();
       throw new Error(`Registration failed. Email is already registered. Error message: ${errorMessage}`);
     }
@@ -46,9 +46,15 @@ describe("Register Page", () => {
     const successMessageText = await successMessageLocator.getText();
     expect(successMessageText).to.include("Thank you for registering with Madison Island.");
 
-    // Assign the registered user
     registeredUser = user;
-  }).timeout(15000); 
+
+    allure.addStep(`Registered a new user: ${user.firstName} ${user.lastName}`);
+    allure.addStep('Filled the registration form');
+    allure.addStep('Submitted the form');
+    allure.addStep('Checked if the email is already registered');
+    allure.addStep('Verified the successful registration URL');
+    allure.addStep('Verified the success message is displayed');
+  }).timeout(15000);
 
   afterEach(() => {
     if (registeredUser) {

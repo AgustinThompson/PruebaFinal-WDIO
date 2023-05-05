@@ -1,4 +1,3 @@
-// mydashboard.page.js
 import BasePage from './base.page';
 
 class MyDashboardPage extends BasePage {

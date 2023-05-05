@@ -1,0 +1,29 @@
+Documentation: Login and Logout Test
+
+Introduction:
+This document provides a description of the files and methods involved in the login and logout testing. It aims to help another developer understand the purpose of each file, the methods they contain, and the relationships between them. The following sections detail the files, their functionalities, and the relationships between them.
+
+1. `base.page.js`:
+The `base.page.js` file defines the `BasePage` class, which serves as the base class for application pages. It includes common methods and properties used across multiple pages, such as:
+- `open(path)`: Opens a specific URL concatenated with the base application URL.
+- `waitForVisible(element)`: Waits for a given element to become visible on the page.
+- `waitForClickable(element)`: Waits for a given element to become clickable on the page.
+
+2. `login.page.js`:
+The `login.page.js` file defines the `LoginPage` class, representing the login page. It provides the following methods:
+- `open()`: Opens the login page.
+- `login(email, password)`: Enters the provided email and password in the respective input fields and clicks the login button.
+
+3. `welcome.page.js`:
+The `welcome.page.js` file defines the `WelcomePage` class, representing the welcome page after successful login. It provides the following methods:
+- `clickAccountLocator()`: Clicks on the account link.
+- `clickLogoutLocator()`: Clicks on the logout link.
+- `getWelcomeMessageText()`: Retrieves the welcome message text displayed on the page.
+
+4. `login.test.js`:
+The `login.test.js` file contains the test cases for login and logout functionalities. It utilizes the `LoginPage` and `WelcomePage` classes to interact with the pages and perform necessary verifications. The test cases are as follows:
+- `Should log in and validate welcome message`: Performs login using provided credentials and verifies the presence of the welcome message.
+- `Should log out`: Performs logout and verifies that the user is redirected to the homepage.
+
+
+--------------------------------------------------
