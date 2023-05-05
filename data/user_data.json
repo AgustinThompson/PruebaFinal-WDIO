@@ -3,9 +3,17 @@
     {
       "firstName": "Agustín",
       "lastName": "Thompson",
-      "email": "chaychay@mimail.com",
+      "email": "chaachajy@mimail.com",
       "password": "Password1234",
       "confirmPassword": "Password1234"
     }
+  ],
+  "loginUsers": [
+    {
+      "email": "htnitsuga@gmail.com",
+      "password": "32695964"
+    }
   ]
 }
+
+

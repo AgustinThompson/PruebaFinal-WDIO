@@ -1,6 +1,7 @@
+// registrationConfirmation.page.js
 import BasePage from "./base.page";
 
-class registrationConfirmationPage extends BasePage {
+class RegistrationConfirmationPage extends BasePage {
   // WebElements
   get successMessageLocator() {
     return $(`li[class="success-msg"] ul li`);
