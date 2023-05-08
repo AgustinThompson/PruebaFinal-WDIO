@@ -24,3 +24,5 @@ productSorting.test.js:
 The productSorting.test.js file contains the test case for sorting products by price in descending order. It utilizes the HomePage and PantsDenimPage classes to interact with the pages and perform necessary verifications. The test case is as follows:
 
 - Should sort products by price in descending order: Navigates to the pants and denim product listing page, sorts the products by price in descending order, and verifies that the first product price is greater than or equal to the second product price.
+
+----------
