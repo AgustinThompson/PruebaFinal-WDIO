@@ -11,6 +11,7 @@ The pantsDenim.page.js file defines the PantsDenimPage class, representing the p
 - getProductPriceByIndex(index): Retrieves the price of the product at the given index.
 - selectSortBy(): Selects "Price (High to Low)" from the sorting dropdown and waits for the page to reload with the new sorting.
 
+
 home.page.js:
 The home.page.js file defines the HomePage class, representing the homepage of the e-commerce website. It provides the following methods:
 - open(): Opens the homepage.
