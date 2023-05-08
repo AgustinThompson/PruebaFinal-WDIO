@@ -12,7 +12,7 @@ The  code consists of four page files, one JSON data file, and one test file.
    - This page file represents the search results page. It contains a web element for the first search result.
    - The `getFirstSearchResultText` method is used to retrieve the text of the first search result.
 
-3. `base.page.js`:
+3. `search.page.js`:
    - This page file represents the base page from which other page files inherit. It contains common methods for interacting with page elements.
    - The `open` method is used to open a page by navigating to the specified URL.
    - The `clickElement` method waits for an element to be clickable and then clicks it.
@@ -20,7 +20,7 @@ The  code consists of four page files, one JSON data file, and one test file.
    - The `sendKeys` method waits for an element to be clickable, clicks it, and sends the specified text.
    - The `waitForVisible` method waits for an element to be visible.
 
-4. `busqueda.test.ddt.js`:
+4. `searchArticles.test.ddt.js`:
    - This file contains a test case that performs a search for each article specified in the `articles` array from the `articles.json` file.
    - The `before` method is used to open the home page before executing the test case.
    - The `afterEach` method is called after each test case to perform cleanup actions if necessary.
