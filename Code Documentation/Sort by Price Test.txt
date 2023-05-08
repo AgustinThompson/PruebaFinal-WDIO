@@ -1,0 +1,30 @@
+Documentation: Product Sorting Test
+
+base.page.js:
+The base.page.js file defines the BasePage class, which serves as the base class for application pages. It includes common methods and properties used across multiple pages, such as:
+- open(path): Opens a specific URL concatenated with the base application URL.
+- waitForVisible(element): Waits for a given element to become visible on the page.
+- waitForClickable(element): Waits for a given element to become clickable on the page.
+
+
+pantsDenim.page.js:
+The pantsDenim.page.js file defines the PantsDenimPage class, representing the pants and denim product listing page. It provides the following methods:
+- getProductPriceByIndex(index): Retrieves the price of the product at the given index.
+- selectSortBy(): Selects "Price (High to Low)" from the sorting dropdown and waits for the page to reload with the new sorting.
+
+
+home.page.js:
+The home.page.js file defines the HomePage class, representing the homepage of the e-commerce website. It provides the following methods:
+- open(): Opens the homepage.
+- hoverMen(): Hovers over the "Men" section in the navigation menu.
+- clickPantsDenim(): Clicks on the "Pants & Denim" link in the "Men" section.
+
+urls.json:
+The urls.json file contains the URLs for different pages of the e-commerce website. The HomePage and PantsDenimPage classes use these URLs to navigate to the respective pages.
+
+productSorting.test.js:
+The productSorting.test.js file contains the test case for sorting products by price in descending order. It utilizes the HomePage and PantsDenimPage classes to interact with the pages and perform necessary verifications. The test case is as follows:
+
+- Should sort products by price in descending order: Navigates to the pants and denim product listing page, sorts the products by price in descending order, and verifies that the first product price is greater than or equal to the second product price.
+
+----------
