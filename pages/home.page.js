@@ -1,33 +1,48 @@
-import BasePage from "./base.page";
+// home.page.js
+
+import BasePage from './base.page';
+import urls from '../data/urls.json';
 
 class HomePage extends BasePage {
+  get menLink() {
+    return $('//a[@class="level0 has-children"][normalize-space()="Men"]');
+  }
+
+  get pantsDenimLink() {
+    return $(`//a[@href="${urls.pantsDenimUrl}"]`);
+  }
+
   get searchInput() {
-    return $("//input[@id='search']");
+    return $('//input[@type="search"]');
   }
 
-  get primerResultadoBusqueda() {
-    return $("//h2[@class='product-name']//a[1]");
+  get searchButton() {
+    return $('//button[@title="Search"]');
   }
 
-  /**
-   * Search for an article by entering the text in the search field and pressing Enter.
-   * @param {string} article - The article to search for.
-   * @returns {Promise} - Promise representing the search action.
-   */
+
+  async open() {
+    await browser.url(urls.homeUrl);
+  }
+
+  async hoverMen() {
+    addStep('Hover over Men section');
+    await this.waitForVisible(this.menLink);
+    await this.menLink.moveTo();
+  }
+
+  async clickPantsDenim() {
+    addStep('Click on Pants & Denim link');
+    await this.waitForVisible(this.pantsDenimLink);
+    await this.clickElement(this.pantsDenimLink);
+  }
+
   async searchArticle(article) {
-    addStep(`Search for article: ${article}`);
-    await this.clearValue(this.searchInput);
-    await this.sendKeys(this.searchInput, article);
-    await this.sendKeys(this.searchInput, "Enter");
-    await this.waitForVisible(this.primerResultadoBusqueda);
+    await this.searchInput.setValue(article);
+    await this.searchButton.click();
   }
 
-  /**
-   * Get the text of the search input field.
-   * @returns {Promise<string>} - Promise representing the text of the search input field.
-   */
   async getSearchInputText() {
-    addStep("Get text from the search input field");
     return await this.searchInput.getValue();
   }
 }

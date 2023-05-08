@@ -1,7 +1,8 @@
 {
-    "homeUrl": "http://magento-demo.lexiconn.com/",
-    "registerUrl": "http://magento-demo.lexiconn.com/customer/account/create/",
-    "loginUrl": "http://magento-demo.lexiconn.com/customer/account/login/",
-    "searchUrl": "http://magento-demo.lexiconn.com/catalogsearch/result/",
-    "successUrl": "http://magento-demo.lexiconn.com/customer/account/index/"
-  }
+  "homeUrl": "http://magento-demo.lexiconn.com/",
+  "registerUrl": "http://magento-demo.lexiconn.com/customer/account/create/",
+  "loginUrl": "http://magento-demo.lexiconn.com/customer/account/login/",
+  "searchUrl": "http://magento-demo.lexiconn.com/catalogsearch/result/",
+  "successUrl": "http://magento-demo.lexiconn.com/customer/account/index/",
+  "pantsDenimUrl": "http://magento-demo.lexiconn.com/men/pants-denim.html"
+}
