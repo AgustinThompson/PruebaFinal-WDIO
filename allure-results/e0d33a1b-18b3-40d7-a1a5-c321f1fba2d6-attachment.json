@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "li.ui-search-layout__item:nth-child(2) a.ui-search-item__group__element.ui-search-link"
-}

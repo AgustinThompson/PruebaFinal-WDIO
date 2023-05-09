@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//*[@id=\"description\"]/div/h2/following-sibling::p[1]"
-}

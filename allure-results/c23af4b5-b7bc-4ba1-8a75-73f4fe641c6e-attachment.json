@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "li.results-item:nth-child(2) a.item__info-title"
-}

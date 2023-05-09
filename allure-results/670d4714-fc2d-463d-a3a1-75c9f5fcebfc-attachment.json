@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "select[name=\"option[217]\"] option:checked"
-}
