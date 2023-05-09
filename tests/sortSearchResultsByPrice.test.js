@@ -1,7 +1,7 @@
 import PantsDenimPage from '../pages/pantsDenim.page';
 import HomePage from '../pages/home.page';
 
-describe('Product Sorting CP004', () => {
+describe('Product Sorting', () => {
   before(async () => {
     await HomePage.open();
   });
@@ -10,7 +10,7 @@ describe('Product Sorting CP004', () => {
     await browser.reloadSession();
   });
 
-  it('Should sort products by price in descending order', async () => {
+  it('Should sort products by price in descending order [CP004]', async () => {
     browser.call(() => {
       allure.addStep('Hover over Men section');
     });

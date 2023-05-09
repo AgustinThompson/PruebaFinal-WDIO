@@ -6,7 +6,7 @@ import allure from '@wdio/allure-reporter';
 
 const articles = articlesData.articles;
 
-describe('Article Search CP003', () => {
+describe('Article Search', () => {
   before(async () => {
     await HomePage.open('/');
   });
@@ -15,7 +15,7 @@ describe('Article Search CP003', () => {
   });
 
   articles.forEach(article => {
-    it(`Should search and find the article: ${article}`, async () => {
+    it(`Should search and find the article: ${article}  [CP003]`, async () => {
       await performSearch(article);
       await validateSearchResults(article);
     });

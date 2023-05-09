@@ -6,7 +6,7 @@ import userData from '../data/user_data.json';
 import allure from '@wdio/allure-reporter';
 import urls from '../data/urls.json';
 
-describe('Login Page CP002', () => {
+describe('Login Page', () => {
   let userEmail;
 
   before(async () => {
@@ -21,7 +21,7 @@ describe('Login Page CP002', () => {
     }
   });
 
-  it('Should log in and validate welcome message', async () => {
+  it('Should log in and validate welcome message [CP002]', async () => {
     const user = userData.loginUsers[0];
 
     await LoginPage.login(user.email, user.password);
@@ -38,7 +38,7 @@ describe('Login Page CP002', () => {
     allure.addStep('Validated welcome message');
   });
 
-  it('Should log out and validate', async () => {
+  it('Should log out and validate [CP002.1]', async () => {
     await WelcomePage.clickAccountLocator();
     await WelcomePage.clickLogoutLocator();
     await browser.pause(5000);

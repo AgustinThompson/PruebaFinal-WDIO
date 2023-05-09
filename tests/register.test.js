@@ -5,7 +5,7 @@ import { users } from "../data/user_data.json";
 import { expect } from "chai";
 import allure from '@wdio/allure-reporter';
 
-describe("Register Page CP001", () => {
+describe("Register Page", () => {
   let registeredUser;
 
   before(async () => {
@@ -19,7 +19,7 @@ describe("Register Page CP001", () => {
 
   const user = users[0];
 
-  it(`Should register a new user: ${user.firstName} ${user.lastName}`, async () => {
+  it(`Should register a new user: ${user.firstName} ${user.lastName} [CP001]`, async () => {
     // Fill the registration form and submit
     await RegisterPage.registerForm(
       user.firstName,
