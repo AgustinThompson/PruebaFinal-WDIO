@@ -5,7 +5,7 @@ import { users } from "../data/user_data.json";
 import { expect } from "chai";
 import allure from '@wdio/allure-reporter';
 
-describe("Register Page", () => {
+describe("Register Page Test", () => {
   let registeredUser;
 
   before(async () => {
