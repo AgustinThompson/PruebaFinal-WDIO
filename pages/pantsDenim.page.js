@@ -15,7 +15,7 @@ class PantsDenimPage extends BasePage {
     const sortByElement = await $(`(//select[@title='Sort By'])[1]`);
     await sortByElement.waitForClickable({ timeout: 5000 });
     await sortByElement.selectByVisibleText('Price');
-    const priceDescendingElement = await $(`(//a[@title='Set Descending Direction'])[1]`);
+    const priceDescendingElement = await $(`(//a[@class='sort-by-switcher sort-by-switcher--asc'])[1]`);
     await priceDescendingElement.waitForClickable({ timeout: 5000 });
     await priceDescendingElement.click();
     await browser.pause(2000);
@@ -23,3 +23,4 @@ class PantsDenimPage extends BasePage {
 }
 
 export default new PantsDenimPage();
+
