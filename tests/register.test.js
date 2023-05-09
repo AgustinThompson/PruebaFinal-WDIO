@@ -1,6 +1,7 @@
 import RegisterPage from "../pages/register.page";
+import HomePage from "../pages/home.page";
+import RegistrationConfirmationPage from "../pages/registrationConfirmation.page";
 import { users } from "../data/user_data.json";
-import urls from "../data/urls.json";
 import { expect } from "chai";
 import allure from '@wdio/allure-reporter';
 
@@ -8,7 +9,9 @@ describe("Register Page", () => {
   let registeredUser;
 
   before(async () => {
-    await RegisterPage.open(urls.registerUrl);
+    await HomePage.open();
+    await HomePage.clickAccountLocator();
+    await HomePage.clickRegisterLink();
   });
 
   after(async () => {
@@ -38,12 +41,11 @@ describe("Register Page", () => {
 
     // Verify successful registration by checking the URL
     const currentUrl = await browser.getUrl();
-    expect(currentUrl).to.include(urls.successUrl);
+    expect(currentUrl).to.include('/customer/account/index');
 
     // Verify the success message is displayed
-    const successMessageLocator = $(`li[class="success-msg"] ul li`);
-    await successMessageLocator.waitForDisplayed();
-    const successMessageText = await successMessageLocator.getText();
+    await RegistrationConfirmationPage.waitForSuccessMessage();
+    const successMessageText = await RegistrationConfirmationPage.getSuccessMessageText();
     expect(successMessageText).to.include("Thank you for registering with Madison Island.");
 
     registeredUser = user;

@@ -1,15 +1,18 @@
 import LoginPage from '../pages/login.page';
 import WelcomePage from '../pages/welcome.page';
-import urls from '../data/urls.json';
+import HomePage from '../pages/home.page';
 import { expect } from 'chai';
 import userData from '../data/user_data.json';
 import allure from '@wdio/allure-reporter';
+import urls from '../data/urls.json';
 
 describe('Login Page', () => {
   let userEmail;
 
   before(async () => {
-    await LoginPage.open(urls.loginUrl);
+    await HomePage.open();
+    await HomePage.clickAccountLocator();
+    await HomePage.clickLoginLink();
   });
 
   afterEach(async () => {

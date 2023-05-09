@@ -1,5 +1,3 @@
-// home.page.js
-
 import BasePage from './base.page';
 import urls from '../data/urls.json';
 
@@ -20,9 +18,32 @@ class HomePage extends BasePage {
     return $('//button[@title="Search"]');
   }
 
+  get accountLocator() {
+    return $(`(//span[@class='label'][normalize-space()='Account'])[1]`);
+  }
+
+  get loginLink() {
+    return $(`a[title="Log In"]`);
+  }
+
+  get registerLink() {
+    return $(`a[title="Register"]`);
+  }
 
   async open() {
     await browser.url(urls.homeUrl);
+  }
+
+  async clickAccountLocator() {
+    await this.accountLocator.click();
+  }
+
+  async clickLoginLink() {
+    await this.loginLink.click();
+  }
+
+  async clickRegisterLink() {
+    await this.registerLink.click();
   }
 
   async hoverMen() {
